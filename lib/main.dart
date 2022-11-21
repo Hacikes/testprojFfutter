@@ -14,17 +14,27 @@ class HomeCard extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  <Widget>[
-              Text(
+            children: <Widget>[
+              const Center(
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images.jpeg'),
+                  radius: 40.0,
+                ),
+              ),
+              Divider(
+                height: 60.0,
+                color: Colors.grey[800],
+              ),
+              const Text(
                 'NAME',
                 style: TextStyle(
                   color: Colors.grey,
                   letterSpacing: 2.0,
-                  fontSize: 20.0
+                  fontSize: 18.0
                 ),
               ),
-              SizedBox(height: 10.0),
-              Text(
+              const SizedBox(height: 10.0),
+              const Text(
                 'Ruslan',
                 style: TextStyle(
                   color: Colors.amberAccent,
@@ -33,17 +43,17 @@ class HomeCard extends StatelessWidget {
                   fontWeight: FontWeight.bold
                 ),
               ),
-              SizedBox(height: 30.0),
-              Text(
+              const SizedBox(height: 30.0),
+              const Text(
                 'AGE',
                 style: TextStyle(
                     color: Colors.grey,
                     letterSpacing: 2.0,
-                    fontSize: 20.0
+                    fontSize: 18.0
                 ),
               ),
-              SizedBox(height: 10.0),
-              Text(
+              const SizedBox(height: 10.0),
+              const Text(
                 '22',
                 style: TextStyle(
                     color: Colors.amberAccent,
@@ -52,14 +62,14 @@ class HomeCard extends StatelessWidget {
                     fontWeight: FontWeight.bold
                 ),
               ),
-              SizedBox(height: 30.0),
+              const SizedBox(height: 30.0),
               Row(
                 children: <Widget>[
                   Icon(
                     Icons.email,
                     color: Colors.grey[400],
                   ),
-                  SizedBox(width: 10.0),
+                  const SizedBox(width: 10.0),
                   Text(
                     'test@mail.ru',
                     style: TextStyle(
