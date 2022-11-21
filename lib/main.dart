@@ -3,9 +3,21 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MaterialApp(
   home: HomeCard(),
 ));
-
-class HomeCard extends StatelessWidget {
+// При нажатии на StatefulWidget и на лампочку можно изменить виджет со статического на динамический(виджет сохранения состояния)
+class HomeCard extends StatefulWidget {
   const HomeCard({Key? key}) : super(key: key);
+
+  @override
+  State<HomeCard> createState() => _HomeCardState();
+}
+
+class _HomeCardState extends State<HomeCard> {
+
+  int rangLevel = 0;
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +57,7 @@ class HomeCard extends StatelessWidget {
               ),
               const SizedBox(height: 30.0),
               const Text(
-                'AGE',
+                'RANG',
                 style: TextStyle(
                     color: Colors.grey,
                     letterSpacing: 2.0,
@@ -53,8 +65,8 @@ class HomeCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10.0),
-              const Text(
-                '22',
+              Text(
+                '$rangLevel',
                 style: TextStyle(
                     color: Colors.amberAccent,
                     letterSpacing: 2.0,
@@ -89,6 +101,15 @@ class HomeCard extends StatelessWidget {
           backgroundColor: Colors.grey[850],
           elevation: 0.0,
         ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              rangLevel += 1;
+            });
+          },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
+      ),
     );
   }
 }
